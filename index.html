@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Uplift Daily</title>
+  <style>
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #141414;
+      --border:    #2a2a2a;
+      --green:     #34c759;
+      --text:      #f0f0f0;
+      --muted:     #888;
+      --card:      #1a1a1a;
+      --radius:    14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .logo-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .lang-picker {
+      position: relative;
+    }
+
+    .lang-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+
+    .lang-btn:hover { background: #222; }
+
+    .lang-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--muted);
+      transition: transform 0.2s;
+    }
+
+    .lang-btn.open svg { transform: rotate(180deg); }
+
+    .lang-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-width: 160px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
+    .lang-dropdown.open { display: block; }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.12s;
+    }
+
+    .lang-option:hover { background: rgba(255,255,255,0.06); }
+    .lang-option.active { color: var(--green); font-weight: 600; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-header {
+      margin-bottom: 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(52,199,89,0.12);
+      border: 1px solid rgba(52,199,89,0.25);
+      border-radius: 20px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 12px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .highlight {
+      background: rgba(52,199,89,0.08);
+      border: 1px solid rgba(52,199,89,0.2);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .highlight-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .highlight-text strong {
+      display: block;
+      color: var(--green);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .highlight-text p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .icon {
+      width: 32px;
+      height: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    p { color: #ccc; margin-bottom: 12px; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    ul li {
+      color: #ccc;
+      font-size: 15px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--green);
+      position: absolute;
+      left: 6px;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .service-card .service-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .service-card .service-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      background: #222;
+      flex-shrink: 0;
+    }
+
+    .service-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .service-card a {
+      color: var(--green);
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .service-card a:hover { text-decoration: underline; }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .right-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .right-item .right-icon { font-size: 20px; margin-bottom: 8px; }
+    .right-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .right-item p  { font-size: 13px; color: var(--muted); margin: 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .contact-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .contact-card p  { font-size: 14px; color: var(--muted); margin: 0; }
+    .contact-card a  { color: var(--green); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+
+    @media (max-width: 600px) {
+      header { padding: 0 16px; }
+      main   { padding: 32px 16px 60px; }
+      .contact-card { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">
+    <div class="logo-icon">↑</div>
+    <span class="logo-name">Uplift Daily</span>
+  </a>
+
+  <div class="lang-picker">
+    <button class="lang-btn" id="langBtn" onclick="toggleDropdown()">
+      <span id="langFlag">🇬🇧</span>
+      <span id="langLabel">English</span>
+      <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+    </button>
+    <div class="lang-dropdown" id="langDropdown">
+      <div class="lang-option active" onclick="setLang('en')">🇬🇧 &nbsp;English</div>
+      <div class="lang-option"        onclick="setLang('de')">🇩🇪 &nbsp;Deutsch</div>
+      <div class="lang-option"        onclick="setLang('tr')">🇹🇷 &nbsp;Türkçe</div>
+      <div class="lang-option"        onclick="setLang('es')">🇪🇸 &nbsp;Español</div>
+      <div class="lang-option"        onclick="setLang('fr')">🇫🇷 &nbsp;Français</div>
+      <div class="lang-option"        onclick="setLang('it')">🇮🇹 &nbsp;Italiano</div>
+      <div class="lang-option"        onclick="setLang('zh')">🇨🇳 &nbsp;中文</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ENGLISH -->
+<div class="lang-content active" id="lang-en">
+  <div class="page-header">
+    <div class="badge">🔒 Privacy Policy</div>
+    <h1>Your privacy.<br>Our commitment.</h1>
+    <p class="subtitle">Last updated: May 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>We do not collect or store any personal data.</strong>
+      <p>Uplift Daily does not require an account, does not track you personally, and never sells data to third parties. Your habits stay yours.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Data Controller</h2>
+    <p>Responsible for this app:</p>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Germany<br>
+    Email: <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> What data does the app process?</h2>
+    <p>Uplift Daily stores your habit data (names, streaks, reminders) <strong>locally on your device</strong> and optionally in your personal iCloud account. This data is never accessible to us.</p>
+    <ul>
+      <li><strong>Habit data</strong> – stored locally and optionally synced via your own iCloud (Apple CloudKit)</li>
+      <li><strong>Reminders</strong> – local push notifications, processed only on your device</li>
+      <li><strong>HealthKit data</strong> – read-only access to steps, workouts and activity (only with your explicit permission, never stored on our servers)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Analytics & Crash Reports</h2>
+    <p>To improve app stability and understand general usage patterns, we use two Firebase services by Google:</p>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">📊</div>
+          <div><h3>Firebase Analytics</h3></div>
+        </div>
+        <p>Collects anonymized, aggregated usage events (e.g. which screens are visited). No personal identifiers are transmitted. Data is processed by Google LLC in the USA.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">🛠️</div>
+          <div><h3>Firebase Crashlytics</h3></div>
+        </div>
+        <p>Records crash reports when the app crashes – including iOS version, device model and app version. No personal data (name, email, location) is included.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Legal basis for Firebase processing: Art. 6(1)(f) GDPR – our legitimate interest in app stability and quality improvement. Data is processed under Google's Data Processing Agreement and subject to Standard Contractual Clauses for transfers to the USA.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> What we do NOT do</h2>
+    <ul>
+      <li>We do not collect names, email addresses or location data</li>
+      <li>We do not create user profiles</li>
+      <li>We do not sell data to third parties</li>
+      <li>We do not use advertising networks or tracking pixels</li>
+      <li>We do not require account registration</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> iCloud Sync (CloudKit)</h2>
+    <p>If iCloud is enabled on your device, your habit data is synced across your Apple devices via Apple CloudKit. This data is stored in your personal iCloud account and is subject to <a href="https://www.apple.com/privacy/" target="_blank" style="color:var(--green)">Apple's Privacy Policy</a>. We have no access to your iCloud data.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> Your rights (GDPR)</h2>
+    <p>As a user in the European Union, you have the following rights:</p>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Access</h4><p>Right to know what data is processed about you</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Rectification</h4><p>Right to correct inaccurate data</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Erasure</h4><p>Right to deletion of your data ("right to be forgotten")</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Portability</h4><p>Right to receive your data in a portable format</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>Objection</h4><p>Right to object to data processing</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Complaint</h4><p>Right to lodge a complaint with a supervisory authority</p></div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Since we process virtually no personal data, most of these rights apply primarily to the anonymized Firebase data. To exercise your rights, contact us at the email below.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Children's Privacy</h2>
+    <p>Uplift Daily is not directed at children under 13. We do not knowingly collect any data from children. If you believe a child has provided us with information, please contact us immediately.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Changes to this Policy</h2>
+    <p>We may update this privacy policy from time to time. Changes will be published on this page with an updated date. We encourage you to review this page periodically.</p>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>Questions about privacy?</h3>
+      <p>We're happy to help. Contact us at <a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> — we'll respond within 72 hours.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- DEUTSCH -->
+<div class="lang-content" id="lang-de">
+  <div class="page-header">
+    <div class="badge">🔒 Datenschutzerklärung</div>
+    <h1>Deine Privatsphäre.<br>Unser Versprechen.</h1>
+    <p class="subtitle">Zuletzt aktualisiert: Mai 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>Wir speichern keine persönlichen Daten von dir.</strong>
+      <p>Uplift Daily benötigt kein Konto, verfolgt dich nicht persönlich und verkauft niemals Daten an Dritte. Deine Gewohnheiten gehören dir.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Verantwortlicher</h2>
+    <p>Verantwortlich für diese App:</p>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Deutschland<br>
+    E-Mail: <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> Welche Daten verarbeitet die App?</h2>
+    <p>Uplift Daily speichert deine Habit-Daten (Namen, Streaks, Erinnerungen) <strong>lokal auf deinem Gerät</strong> und optional in deinem persönlichen iCloud-Account. Diese Daten sind für uns nicht zugänglich.</p>
+    <ul>
+      <li><strong>Habit-Daten</strong> – lokal gespeichert und optional über dein eigenes iCloud (Apple CloudKit) synchronisiert</li>
+      <li><strong>Erinnerungen</strong> – lokale Push-Benachrichtigungen, nur auf deinem Gerät verarbeitet</li>
+      <li><strong>HealthKit-Daten</strong> – Lesezugriff auf Schritte, Workouts und Aktivitäten (nur mit deiner ausdrücklichen Erlaubnis, werden nie auf unseren Servern gespeichert)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Analyse & Absturzberichte</h2>
+    <p>Um die App-Stabilität zu verbessern und allgemeine Nutzungsmuster zu verstehen, verwenden wir zwei Firebase-Dienste von Google:</p>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">📊</div>
+          <div><h3>Firebase Analytics</h3></div>
+        </div>
+        <p>Erfasst anonymisierte, aggregierte Nutzungsereignisse (z. B. welche Bildschirme besucht werden). Es werden keine persönlichen Kennzeichen übertragen. Daten werden von Google LLC in den USA verarbeitet.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">🛠️</div>
+          <div><h3>Firebase Crashlytics</h3></div>
+        </div>
+        <p>Zeichnet Absturzberichte auf, wenn die App abstürzt – einschließlich iOS-Version, Gerätemodell und App-Version. Keine persönlichen Daten (Name, E-Mail, Standort) werden übermittelt.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz →</a>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Rechtsgrundlage für die Firebase-Verarbeitung: Art. 6 Abs. 1 lit. f DSGVO – unser berechtigtes Interesse an App-Stabilität und Qualitätsverbesserung. Die Datenverarbeitung erfolgt auf Basis eines Auftragsverarbeitungsvertrags mit Google und Standardvertragsklauseln für Übermittlungen in die USA.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Was wir NICHT tun</h2>
+    <ul>
+      <li>Wir erheben keine Namen, E-Mail-Adressen oder Standortdaten</li>
+      <li>Wir erstellen keine Nutzerprofile</li>
+      <li>Wir verkaufen keine Daten an Dritte</li>
+      <li>Wir verwenden keine Werbenetzwerke oder Tracking-Pixel</li>
+      <li>Wir verlangen keine Kontoregistrierung</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> iCloud-Synchronisation (CloudKit)</h2>
+    <p>Wenn iCloud auf deinem Gerät aktiviert ist, werden deine Habit-Daten über Apple CloudKit auf deinen Apple-Geräten synchronisiert. Diese Daten werden in deinem persönlichen iCloud-Konto gespeichert und unterliegen der <a href="https://www.apple.com/de/privacy/" target="_blank" style="color:var(--green)">Datenschutzrichtlinie von Apple</a>. Wir haben keinen Zugriff auf deine iCloud-Daten.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> Deine Rechte (DSGVO)</h2>
+    <p>Als Nutzer in der Europäischen Union hast du folgende Rechte:</p>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Auskunft</h4><p>Recht zu erfahren, welche Daten über dich verarbeitet werden</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Berichtigung</h4><p>Recht auf Korrektur unrichtiger Daten</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Löschung</h4><p>Recht auf Löschung deiner Daten („Recht auf Vergessenwerden")</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Datenportabilität</h4><p>Recht, deine Daten in einem übertragbaren Format zu erhalten</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>Widerspruch</h4><p>Recht, der Datenverarbeitung zu widersprechen</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Beschwerde</h4><p>Recht auf Beschwerde bei einer Aufsichtsbehörde</p></div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Da wir praktisch keine personenbezogenen Daten verarbeiten, gelten diese Rechte vor allem für die anonymisierten Firebase-Daten. Um deine Rechte auszuüben, kontaktiere uns unter der unten angegebenen E-Mail.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Datenschutz für Kinder</h2>
+    <p>Uplift Daily richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine Daten von Kindern. Wenn du glaubst, dass ein Kind uns Informationen übermittelt hat, kontaktiere uns bitte umgehend.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Änderungen dieser Erklärung</h2>
+    <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite mit einem aktualisierten Datum veröffentlicht. Wir empfehlen dir, diese Seite regelmäßig zu prüfen.</p>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>Fragen zum Datenschutz?</h3>
+      <p>Wir helfen gerne. Schreib uns an <a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> – wir antworten innerhalb von 72 Stunden.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- TÜRKÇE -->
+<div class="lang-content" id="lang-tr">
+  <div class="page-header">
+    <div class="badge">🔒 Gizlilik Politikası</div>
+    <h1>Gizliliğin.<br>Taahhüdümüz.</h1>
+    <p class="subtitle">Son güncelleme: Mayıs 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>Kişisel veri toplamıyor veya saklamıyoruz.</strong>
+      <p>Uplift Daily hesap gerektirmez, sizi kişisel olarak takip etmez ve verileri üçüncü taraflara asla satmaz. Alışkanlıklarınız size aittir.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Veri Sorumlusu</h2>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Almanya<br>
+    E-posta: <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> Uygulama hangi verileri işler?</h2>
+    <p>Uplift Daily, alışkanlık verilerinizi (isimler, seriler, hatırlatıcılar) <strong>cihazınızda yerel olarak</strong> ve isteğe bağlı olarak kişisel iCloud hesabınızda saklar. Bu verilere erişimimiz yoktur.</p>
+    <ul>
+      <li><strong>Alışkanlık verileri</strong> – yerel olarak saklanır, isteğe bağlı olarak kendi iCloud'unuzla (Apple CloudKit) senkronize edilir</li>
+      <li><strong>Hatırlatıcılar</strong> – yalnızca cihazınızda işlenen yerel push bildirimleri</li>
+      <li><strong>HealthKit verileri</strong> – adımlar, egzersizler ve aktivitelere salt okunur erişim (yalnızca açık izninizle, sunucularımızda hiçbir zaman saklanmaz)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Analiz ve Kilitlenme Raporları</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
+        <p>Anonim, toplu kullanım olayları toplar. Kişisel tanımlayıcı iletilmez. Veriler Google LLC tarafından ABD'de işlenir.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
+        <p>Uygulama çöktüğünde kilitlenme raporları kaydeder – iOS sürümü, cihaz modeli ve uygulama sürümü dahil. Kişisel veri (ad, e-posta, konum) iletilmez.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Yapmadıklarımız</h2>
+    <ul>
+      <li>Ad, e-posta adresi veya konum verisi toplamıyoruz</li>
+      <li>Kullanıcı profili oluşturmuyoruz</li>
+      <li>Üçüncü taraflara veri satmıyoruz</li>
+      <li>Reklam ağları veya izleme pikseli kullanmıyoruz</li>
+      <li>Hesap kaydı gerektirmiyoruz</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> iCloud Senkronizasyonu</h2>
+    <p>iCloud etkinleştirilmişse, alışkanlık verileriniz Apple CloudKit aracılığıyla Apple cihazlarınızla senkronize edilir. Bu veriler kişisel iCloud hesabınızda saklanır. Verilerinize erişimimiz yoktur.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> Haklarınız (GDPR)</h2>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Erişim</h4><p>İşlenen veriler hakkında bilgi alma hakkı</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Düzeltme</h4><p>Yanlış verilerin düzeltilmesini talep etme hakkı</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Silme</h4><p>Verilerinizin silinmesini talep etme hakkı</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>İtiraz</h4><p>Veri işlemeye itiraz etme hakkı</p></div>
+    </div>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>Gizlilik hakkında sorularınız mı var?</h3>
+      <p><a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> adresine yazın – 72 saat içinde yanıt veririz.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ESPAÑOL -->
+<div class="lang-content" id="lang-es">
+  <div class="page-header">
+    <div class="badge">🔒 Política de Privacidad</div>
+    <h1>Tu privacidad.<br>Nuestro compromiso.</h1>
+    <p class="subtitle">Última actualización: Mayo 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>No recopilamos ni almacenamos datos personales.</strong>
+      <p>Uplift Daily no requiere cuenta, no te rastrea personalmente y nunca vende datos a terceros. Tus hábitos son tuyos.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Responsable del tratamiento</h2>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Alemania<br>
+    Correo: <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> ¿Qué datos procesa la app?</h2>
+    <ul>
+      <li><strong>Datos de hábitos</strong> – almacenados localmente y sincronizados opcionalmente con tu iCloud (Apple CloudKit)</li>
+      <li><strong>Recordatorios</strong> – notificaciones push locales, procesadas solo en tu dispositivo</li>
+      <li><strong>Datos de HealthKit</strong> – acceso de solo lectura a pasos, ejercicios y actividad (solo con tu permiso explícito)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Análisis y Reportes de Fallos</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
+        <p>Recopila eventos de uso anónimos y agregados. No se transmiten identificadores personales. Google LLC procesa los datos en EE. UU.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacidad de Firebase →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
+        <p>Registra informes de fallos cuando la app se cierra inesperadamente. No se incluyen datos personales.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacidad de Firebase →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Lo que NO hacemos</h2>
+    <ul>
+      <li>No recopilamos nombres, correos electrónicos ni datos de ubicación</li>
+      <li>No creamos perfiles de usuario</li>
+      <li>No vendemos datos a terceros</li>
+      <li>No utilizamos redes publicitarias ni píxeles de seguimiento</li>
+      <li>No requerimos registro de cuenta</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> Tus derechos (RGPD)</h2>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Acceso</h4><p>Derecho a saber qué datos se procesan</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Rectificación</h4><p>Derecho a corregir datos incorrectos</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Supresión</h4><p>Derecho al olvido</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>Oposición</h4><p>Derecho a oponerse al tratamiento</p></div>
+    </div>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>¿Preguntas sobre privacidad?</h3>
+      <p>Escríbenos a <a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> – respondemos en 72 horas.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- FRANÇAIS -->
+<div class="lang-content" id="lang-fr">
+  <div class="page-header">
+    <div class="badge">🔒 Politique de Confidentialité</div>
+    <h1>Votre vie privée.<br>Notre engagement.</h1>
+    <p class="subtitle">Dernière mise à jour : Mai 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>Nous ne collectons ni ne stockons aucune donnée personnelle.</strong>
+      <p>Uplift Daily ne nécessite pas de compte, ne vous suit pas personnellement et ne vend jamais de données à des tiers. Vos habitudes vous appartiennent.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Responsable du traitement</h2>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Allemagne<br>
+    E-mail : <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> Quelles données l'application traite-t-elle ?</h2>
+    <ul>
+      <li><strong>Données d'habitudes</strong> – stockées localement et synchronisées optionnellement via votre iCloud (Apple CloudKit)</li>
+      <li><strong>Rappels</strong> – notifications push locales, traitées uniquement sur votre appareil</li>
+      <li><strong>Données HealthKit</strong> – accès en lecture seule aux pas, entraînements et activités (uniquement avec votre permission explicite)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Analyses et Rapports de Plantage</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
+        <p>Collecte des événements d'utilisation anonymisés et agrégés. Aucun identifiant personnel n'est transmis. Les données sont traitées par Google LLC aux États-Unis.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Confidentialité Firebase →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
+        <p>Enregistre les rapports de plantage. Aucune donnée personnelle (nom, e-mail, localisation) n'est incluse.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Confidentialité Firebase →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Ce que nous ne faisons PAS</h2>
+    <ul>
+      <li>Nous ne collectons pas de noms, e-mails ou données de localisation</li>
+      <li>Nous ne créons pas de profils d'utilisateurs</li>
+      <li>Nous ne vendons pas de données à des tiers</li>
+      <li>Nous n'utilisons pas de réseaux publicitaires</li>
+      <li>Nous ne requérons pas d'inscription</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> Vos droits (RGPD)</h2>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Accès</h4><p>Droit de savoir quelles données sont traitées</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Rectification</h4><p>Droit de corriger des données inexactes</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Effacement</h4><p>Droit à l'oubli</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>Opposition</h4><p>Droit de s'opposer au traitement</p></div>
+    </div>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>Des questions sur la confidentialité ?</h3>
+      <p>Écrivez-nous à <a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> – nous répondons dans les 72 heures.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ITALIANO -->
+<div class="lang-content" id="lang-it">
+  <div class="page-header">
+    <div class="badge">🔒 Informativa sulla Privacy</div>
+    <h1>La tua privacy.<br>Il nostro impegno.</h1>
+    <p class="subtitle">Ultimo aggiornamento: Maggio 2026 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>Non raccogliamo né archiviamo dati personali.</strong>
+      <p>Uplift Daily non richiede un account, non ti traccia personalmente e non vende mai dati a terzi. Le tue abitudini sono tue.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> Titolare del trattamento</h2>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    Germania<br>
+    Email: <a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> Quali dati elabora l'app?</h2>
+    <ul>
+      <li><strong>Dati sulle abitudini</strong> – archiviati localmente e sincronizzati facoltativamente tramite iCloud (Apple CloudKit)</li>
+      <li><strong>Promemoria</strong> – notifiche push locali, elaborate solo sul tuo dispositivo</li>
+      <li><strong>Dati HealthKit</strong> – accesso in sola lettura a passi, allenamenti e attività (solo con il tuo esplicito consenso)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – Analisi e Segnalazioni di Crash</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
+        <p>Raccoglie eventi di utilizzo anonimi e aggregati. Nessun identificatore personale viene trasmesso. I dati sono elaborati da Google LLC negli USA.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Firebase →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
+        <p>Registra i rapporti di crash. Nessun dato personale è incluso.</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Firebase →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> Cosa NON facciamo</h2>
+    <ul>
+      <li>Non raccogliamo nomi, email o dati di localizzazione</li>
+      <li>Non creiamo profili utente</li>
+      <li>Non vendiamo dati a terzi</li>
+      <li>Non utilizziamo reti pubblicitarie</li>
+      <li>Non richidiamo la registrazione di un account</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> I tuoi diritti (GDPR)</h2>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>Accesso</h4><p>Diritto di sapere quali dati vengono elaborati</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>Rettifica</h4><p>Diritto di correggere dati inesatti</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Cancellazione</h4><p>Diritto all'oblio</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>Opposizione</h4><p>Diritto di opporsi al trattamento</p></div>
+    </div>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>Domande sulla privacy?</h3>
+      <p>Scrivici a <a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> – rispondiamo entro 72 ore.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 中文 -->
+<div class="lang-content" id="lang-zh">
+  <div class="page-header">
+    <span class="badge">🔒 隐私政策</span>
+    <h1>您的隐私。<br>我们的承诺。</h1>
+    <p class="subtitle">最后更新：2026年5月 &nbsp;·&nbsp; Uplift Daily</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">✅</div>
+    <div class="highlight-text">
+      <strong>我们不收集或存储任何个人数据。</strong>
+      <p>Uplift Daily 无需账户，不追踪您的个人信息，也不向第三方出售任何数据。您的习惯只属于您自己。</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="icon">👤</span> 数据控制者</h2>
+    <p>本应用的责任方：</p>
+    <p><strong>Evren Agsakal</strong><br>
+    Brückelstr. 106<br>
+    47137 Duisburg<br>
+    德国<br>
+    电子邮件：<a href="mailto:evro89@hotmail.de" style="color:var(--green)">evro89@hotmail.de</a></p>
+  </section>
+
+  <section>
+    <h2><span class="icon">📱</span> 应用处理哪些数据？</h2>
+    <p>Uplift Daily 将您的习惯数据（名称、连续天数、提醒）<strong>本地存储在您的设备上</strong>，并可选地存储在您的个人 iCloud 账户中。我们无法访问这些数据。</p>
+    <ul>
+      <li><strong>习惯数据</strong> – 本地存储，可通过您自己的 iCloud（Apple CloudKit）同步</li>
+      <li><strong>提醒</strong> – 本地推送通知，仅在您的设备上处理</li>
+      <li><strong>HealthKit 数据</strong> – 只读访问步数、锻炼和活动数据（仅在您明确授权的情况下，从不存储在我们的服务器上）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase – 分析与崩溃报告</h2>
+    <p>为了提升应用稳定性并了解一般使用模式，我们使用 Google 提供的两项 Firebase 服务：</p>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">📊</div>
+          <div><h3>Firebase Analytics</h3></div>
+        </div>
+        <p>收集匿名化、聚合的使用事件。不传输任何个人标识符。数据由美国 Google LLC 处理。</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策 →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-logo">🛠️</div>
+          <div><h3>Firebase Crashlytics</h3></div>
+        </div>
+        <p>当应用崩溃时记录崩溃报告。不包含任何个人数据（姓名、电子邮件、位置）。</p>
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🚫</span> 我们不做的事</h2>
+    <ul>
+      <li>不收集姓名、电子邮件地址或位置数据</li>
+      <li>不向广告商或数据经纪商出售数据</li>
+      <li>不创建用户档案</li>
+      <li>不在设备间追踪您</li>
+      <li>不要求账户注册</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> iCloud 同步</h2>
+    <p>如果您启用 iCloud 同步，您的习惯数据将存储在您的个人 Apple iCloud 账户（CloudKit）中。这些数据由 Apple 负责，我们无法访问。</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">⚖️</span> 您的权利（GDPR）</h2>
+    <div class="rights-grid">
+      <div class="right-item"><div class="right-icon">👁️</div><h4>访问权</h4><p>了解正在处理哪些数据的权利</p></div>
+      <div class="right-item"><div class="right-icon">✏️</div><h4>更正权</h4><p>更正不准确数据的权利</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>删除权</h4><p>被遗忘的权利</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>可携权</h4><p>以机器可读格式接收数据的权利</p></div>
+      <div class="right-item"><div class="right-icon">🚫</div><h4>反对权</h4><p>反对数据处理的权利</p></div>
+      <div class="right-item"><div class="right-icon">📢</div><h4>投诉权</h4><p>向监督机构提出投诉的权利</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> 儿童隐私</h2>
+    <p>Uplift Daily 不面向13岁以下儿童。我们不会有意收集儿童数据。如果您认为某个儿童向我们提供了信息，请立即联系我们。</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> 本政策的变更</h2>
+    <p>我们可能会不定期更新本隐私政策。更改将在本页面以更新日期发布。建议您定期查看本页面。</p>
+  </section>
+
+  <hr>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div>
+      <h3>有隐私问题？</h3>
+      <p>欢迎联系我们：<a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a>——我们将在72小时内回复。</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  © 2026 Uplift Daily · Evren Agsakal &nbsp;·&nbsp;
+  <a href="mailto:evro89@hotmail.de" style="color:var(--green); text-decoration:none">evro89@hotmail.de</a>
+</footer>
+
+<script>
+  const langs = {
+    en: { flag: '🇬🇧', label: 'English' },
+    de: { flag: '🇩🇪', label: 'Deutsch' },
+    tr: { flag: '🇹🇷', label: 'Türkçe' },
+    es: { flag: '🇪🇸', label: 'Español' },
+    fr: { flag: '🇫🇷', label: 'Français' },
+    it: { flag: '🇮🇹', label: 'Italiano' },
+    zh: { flag: '🇨🇳', label: '中文' },
+  };
+
+  let currentLang = 'en';
+
+  function toggleDropdown() {
+    const btn = document.getElementById('langBtn');
+    const dd  = document.getElementById('langDropdown');
+    btn.classList.toggle('open');
+    dd.classList.toggle('open');
+  }
+
+  function setLang(lang) {
+    document.getElementById('lang-' + currentLang).classList.remove('active');
+    currentLang = lang;
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.getElementById('langFlag').textContent  = langs[lang].flag;
+    document.getElementById('langLabel').textContent = langs[lang].label;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-option').forEach((el, i) => {
+      el.classList.toggle('active', Object.keys(langs)[i] === lang);
+    });
+    document.getElementById('langBtn').classList.remove('open');
+    document.getElementById('langDropdown').classList.remove('open');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  (function() {
+    const browserLang = navigator.language.slice(0, 2).toLowerCase();
+    if (langs[browserLang] && browserLang !== 'en') {
+      setLang(browserLang);
+    }
+  })();
+
+  document.addEventListener('click', function(e) {
+    const picker = document.querySelector('.lang-picker');
+    if (!picker.contains(e.target)) {
+      document.getElementById('langBtn').classList.remove('open');
+      document.getElementById('langDropdown').classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
