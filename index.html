@@ -66,9 +66,7 @@
       color: var(--text);
     }
 
-    .lang-picker {
-      position: relative;
-    }
+    .lang-picker { position: relative; }
 
     .lang-btn {
       background: var(--surface);
@@ -130,9 +128,7 @@
       padding: 48px 24px 80px;
     }
 
-    .page-header {
-      margin-bottom: 40px;
-    }
+    .page-header { margin-bottom: 40px; }
 
     .badge {
       display: inline-flex;
@@ -157,10 +153,7 @@
       margin-bottom: 12px;
     }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 15px;
-    }
+    .subtitle { color: var(--muted); font-size: 15px; }
 
     .highlight {
       background: rgba(52,199,89,0.08);
@@ -173,11 +166,7 @@
       align-items: flex-start;
     }
 
-    .highlight-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .highlight-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
 
     .highlight-text strong {
       display: block;
@@ -187,14 +176,27 @@
       margin-bottom: 4px;
     }
 
-    .highlight-text p {
-      color: #aaa;
-      font-size: 14px;
+    .highlight-text p { color: #aaa; font-size: 14px; }
+
+    .health-notice {
+      background: rgba(255,45,85,0.08);
+      border: 1px solid rgba(255,45,85,0.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 16px;
     }
 
-    section {
-      margin-bottom: 36px;
+    .health-notice strong {
+      display: block;
+      color: #ff6b81;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
+
+    .health-notice ul { margin-bottom: 0; }
+
+    section { margin-bottom: 36px; }
 
     h2 {
       font-size: 20px;
@@ -276,16 +278,8 @@
       flex-shrink: 0;
     }
 
-    .service-card h3 {
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .service-card p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
+    .service-card h3 { font-size: 15px; font-weight: 700; }
+    .service-card p  { font-size: 13px; color: var(--muted); margin: 0; }
 
     .service-card a {
       color: var(--green);
@@ -330,10 +324,7 @@
       align-items: center;
     }
 
-    .contact-icon {
-      font-size: 28px;
-      flex-shrink: 0;
-    }
+    .contact-icon { font-size: 28px; flex-shrink: 0; }
 
     .contact-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
     .contact-card p  { font-size: 14px; color: var(--muted); margin: 0; }
@@ -386,19 +377,19 @@
 
 <main>
 
-<!-- ENGLISH -->
+<!-- ═══════════════════════════════════════ ENGLISH ═══════════════════════════════════════ -->
 <div class="lang-content active" id="lang-en">
   <div class="page-header">
     <div class="badge">🔒 Privacy Policy</div>
     <h1>Your privacy.<br>Our commitment.</h1>
-    <p class="subtitle">Last updated: May 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Last updated: June 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>We do not collect or store any personal data.</strong>
-      <p>Uplift Daily does not require an account, does not track you personally, and never sells data to third parties. Your habits stay yours.</p>
+      <strong>No personal data is collected or sold.</strong>
+      <p>Uplift Daily does not require an account, does not track you personally, and never sells your data to third parties. Your habit data stays on your device and in your personal iCloud. The only data we receive is a single anonymous launch event via Firebase Analytics.</p>
     </div>
   </div>
 
@@ -414,36 +405,43 @@
 
   <section>
     <h2><span class="icon">📱</span> What data does the app process?</h2>
-    <p>Uplift Daily stores your habit data (names, streaks, reminders) <strong>locally on your device</strong> and optionally in your personal iCloud account. This data is never accessible to us.</p>
+    <p>Uplift Daily stores your habit data (names, streaks, reminders) <strong>locally on your device</strong> and optionally in your personal iCloud account via Apple CloudKit. This data is never accessible to us.</p>
     <ul>
       <li><strong>Habit data</strong> – stored locally and optionally synced via your own iCloud (Apple CloudKit)</li>
-      <li><strong>Reminders</strong> – local push notifications, processed only on your device</li>
-      <li><strong>HealthKit data</strong> – read-only access to steps, workouts and activity (only with your explicit permission, never stored on our servers)</li>
+      <li><strong>Your name</strong> – stored locally and in iCloud Key-Value Store for your avatar; never transmitted to us</li>
+      <li><strong>Reminders</strong> – local push notifications, processed entirely on your device</li>
+      <li><strong>HealthKit data</strong> – see dedicated section below</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Analytics & Crash Reports</h2>
-    <p>To improve app stability and understand general usage patterns, we use two Firebase services by Google:</p>
+    <h2><span class="icon">❤️</span> Apple Health (HealthKit)</h2>
+    <p>Uplift reads health data (steps, workouts, active minutes) from Apple Health to automatically check off compatible habits. This requires your explicit permission via the iOS system dialog.</p>
+    <div class="health-notice">
+      <strong>Apple-required disclosure:</strong>
+      <ul>
+        <li>HealthKit data is used <strong>exclusively</strong> to check off habits within Uplift — never for advertising or data-mining</li>
+        <li>HealthKit data is <strong>never sold</strong> or shared with third parties</li>
+        <li>HealthKit data is <strong>never stored on our servers</strong> — it remains on your device and in your personal iCloud</li>
+        <li>You can revoke Health access at any time: <strong>Settings → Privacy &amp; Security → Health → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>To understand whether the app is being used at all, we use Firebase Analytics by Google. We log a single anonymous event: <strong>app_started</strong> — triggered when the app launches. No personal identifiers, no habit content, no health data is included.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header">
           <div class="service-logo">📊</div>
           <div><h3>Firebase Analytics</h3></div>
         </div>
-        <p>Collects anonymized, aggregated usage events (e.g. which screens are visited). No personal identifiers are transmitted. Data is processed by Google LLC in the USA.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-logo">🛠️</div>
-          <div><h3>Firebase Crashlytics</h3></div>
-        </div>
-        <p>Records crash reports when the app crashes – including iOS version, device model and app version. No personal data (name, email, location) is included.</p>
+        <p>One anonymous event (<code>app_started</code>) is sent on launch. No personal data, no habits, no health information is transmitted. Data is processed by Google LLC in the USA.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a>
       </div>
     </div>
-    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Legal basis for Firebase processing: Art. 6(1)(f) GDPR – our legitimate interest in app stability and quality improvement. Data is processed under Google's Data Processing Agreement and subject to Standard Contractual Clauses for transfers to the USA.</p>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Legal basis: Art. 6(1)(f) GDPR – our legitimate interest in understanding basic app usage. Data is processed under Google's Data Processing Agreement with Standard Contractual Clauses for transfers to the USA.</p>
   </section>
 
   <section>
@@ -452,6 +450,7 @@
       <li>We do not collect names, email addresses or location data</li>
       <li>We do not create user profiles</li>
       <li>We do not sell data to third parties</li>
+      <li>We do not use HealthKit data for advertising or data-mining</li>
       <li>We do not use advertising networks or tracking pixels</li>
       <li>We do not require account registration</li>
     </ul>
@@ -463,17 +462,22 @@
   </section>
 
   <section>
+    <h2><span class="icon">🎤</span> Siri &amp; Shortcuts</h2>
+    <p>Uplift supports Siri and Apple Shortcuts so you can check off habits with your voice. All Siri processing is handled by Apple. We do not receive or store any voice data or Siri queries.</p>
+  </section>
+
+  <section>
     <h2><span class="icon">⚖️</span> Your rights (GDPR)</h2>
     <p>As a user in the European Union, you have the following rights:</p>
     <div class="rights-grid">
       <div class="right-item"><div class="right-icon">👁️</div><h4>Access</h4><p>Right to know what data is processed about you</p></div>
       <div class="right-item"><div class="right-icon">✏️</div><h4>Rectification</h4><p>Right to correct inaccurate data</p></div>
-      <div class="right-item"><div class="right-icon">🗑️</div><h4>Erasure</h4><p>Right to deletion of your data ("right to be forgotten")</p></div>
+      <div class="right-item"><div class="right-icon">🗑️</div><h4>Erasure</h4><p>Right to deletion ("right to be forgotten")</p></div>
       <div class="right-item"><div class="right-icon">📦</div><h4>Portability</h4><p>Right to receive your data in a portable format</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>Objection</h4><p>Right to object to data processing</p></div>
       <div class="right-item"><div class="right-icon">⚠️</div><h4>Complaint</h4><p>Right to lodge a complaint with a supervisory authority</p></div>
     </div>
-    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Since we process virtually no personal data, most of these rights apply primarily to the anonymized Firebase data. To exercise your rights, contact us at the email below.</p>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Since we process virtually no personal data, most of these rights apply primarily to the anonymized Firebase Analytics event. To exercise your rights, contact us at the email below.</p>
   </section>
 
   <section>
@@ -497,19 +501,19 @@
 </div>
 
 
-<!-- DEUTSCH -->
+<!-- ═══════════════════════════════════════ DEUTSCH ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-de">
   <div class="page-header">
     <div class="badge">🔒 Datenschutzerklärung</div>
     <h1>Deine Privatsphäre.<br>Unser Versprechen.</h1>
-    <p class="subtitle">Zuletzt aktualisiert: Mai 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Zuletzt aktualisiert: Juni 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>Wir speichern keine persönlichen Daten von dir.</strong>
-      <p>Uplift Daily benötigt kein Konto, verfolgt dich nicht persönlich und verkauft niemals Daten an Dritte. Deine Gewohnheiten gehören dir.</p>
+      <strong>Keine persönlichen Daten werden gesammelt oder verkauft.</strong>
+      <p>Uplift Daily benötigt kein Konto, verfolgt dich nicht persönlich und verkauft deine Daten niemals an Dritte. Deine Habit-Daten bleiben auf deinem Gerät und in deinem persönlichen iCloud. Das Einzige, was wir erhalten, ist ein einzelnes anonymes Start-Event über Firebase Analytics.</p>
     </div>
   </div>
 
@@ -525,36 +529,43 @@
 
   <section>
     <h2><span class="icon">📱</span> Welche Daten verarbeitet die App?</h2>
-    <p>Uplift Daily speichert deine Habit-Daten (Namen, Streaks, Erinnerungen) <strong>lokal auf deinem Gerät</strong> und optional in deinem persönlichen iCloud-Account. Diese Daten sind für uns nicht zugänglich.</p>
+    <p>Uplift Daily speichert deine Habit-Daten (Namen, Streaks, Erinnerungen) <strong>lokal auf deinem Gerät</strong> und optional in deinem persönlichen iCloud-Account über Apple CloudKit. Diese Daten sind für uns nicht zugänglich.</p>
     <ul>
       <li><strong>Habit-Daten</strong> – lokal gespeichert und optional über dein eigenes iCloud (Apple CloudKit) synchronisiert</li>
-      <li><strong>Erinnerungen</strong> – lokale Push-Benachrichtigungen, nur auf deinem Gerät verarbeitet</li>
-      <li><strong>HealthKit-Daten</strong> – Lesezugriff auf Schritte, Workouts und Aktivitäten (nur mit deiner ausdrücklichen Erlaubnis, werden nie auf unseren Servern gespeichert)</li>
+      <li><strong>Dein Name</strong> – lokal und im iCloud Key-Value Store für deinen Avatar gespeichert; wird nie an uns übermittelt</li>
+      <li><strong>Erinnerungen</strong> – lokale Push-Benachrichtigungen, vollständig auf deinem Gerät verarbeitet</li>
+      <li><strong>HealthKit-Daten</strong> – siehe eigenen Abschnitt unten</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Analyse & Absturzberichte</h2>
-    <p>Um die App-Stabilität zu verbessern und allgemeine Nutzungsmuster zu verstehen, verwenden wir zwei Firebase-Dienste von Google:</p>
+    <h2><span class="icon">❤️</span> Apple Health (HealthKit)</h2>
+    <p>Uplift liest Gesundheitsdaten (Schritte, Workouts, aktive Minuten) aus Apple Health, um kompatible Habits automatisch abzuhaken. Dies erfordert deine ausdrückliche Erlaubnis über den iOS-Systemdialog.</p>
+    <div class="health-notice">
+      <strong>Pflichthinweis (Apple-Richtlinie):</strong>
+      <ul>
+        <li>HealthKit-Daten werden <strong>ausschließlich</strong> zum Abhaken von Habits in Uplift verwendet — niemals für Werbung oder Datenauswertung</li>
+        <li>HealthKit-Daten werden <strong>niemals verkauft</strong> oder an Dritte weitergegeben</li>
+        <li>HealthKit-Daten werden <strong>niemals auf unseren Servern gespeichert</strong> — sie verbleiben auf deinem Gerät und in deinem persönlichen iCloud</li>
+        <li>Du kannst den Health-Zugriff jederzeit widerrufen: <strong>Einstellungen → Datenschutz &amp; Sicherheit → Gesundheit → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>Um zu verstehen, ob die App überhaupt genutzt wird, verwenden wir Firebase Analytics von Google. Wir protokollieren ein einziges anonymes Event: <strong>app_started</strong> — ausgelöst beim App-Start. Keine persönlichen Kennzeichen, keine Habit-Inhalte, keine Gesundheitsdaten werden übermittelt.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header">
           <div class="service-logo">📊</div>
           <div><h3>Firebase Analytics</h3></div>
         </div>
-        <p>Erfasst anonymisierte, aggregierte Nutzungsereignisse (z. B. welche Bildschirme besucht werden). Es werden keine persönlichen Kennzeichen übertragen. Daten werden von Google LLC in den USA verarbeitet.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-logo">🛠️</div>
-          <div><h3>Firebase Crashlytics</h3></div>
-        </div>
-        <p>Zeichnet Absturzberichte auf, wenn die App abstürzt – einschließlich iOS-Version, Gerätemodell und App-Version. Keine persönlichen Daten (Name, E-Mail, Standort) werden übermittelt.</p>
+        <p>Beim App-Start wird ein anonymes Event (<code>app_started</code>) gesendet. Keine persönlichen Daten, keine Habits, keine Gesundheitsinformationen werden übertragen. Daten werden von Google LLC in den USA verarbeitet.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz →</a>
       </div>
     </div>
-    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Rechtsgrundlage für die Firebase-Verarbeitung: Art. 6 Abs. 1 lit. f DSGVO – unser berechtigtes Interesse an App-Stabilität und Qualitätsverbesserung. Die Datenverarbeitung erfolgt auf Basis eines Auftragsverarbeitungsvertrags mit Google und Standardvertragsklauseln für Übermittlungen in die USA.</p>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO – unser berechtigtes Interesse an der Kenntnis der grundlegenden App-Nutzung. Die Verarbeitung erfolgt auf Basis eines Auftragsverarbeitungsvertrags mit Google und Standardvertragsklauseln für Übermittlungen in die USA.</p>
   </section>
 
   <section>
@@ -563,6 +574,7 @@
       <li>Wir erheben keine Namen, E-Mail-Adressen oder Standortdaten</li>
       <li>Wir erstellen keine Nutzerprofile</li>
       <li>Wir verkaufen keine Daten an Dritte</li>
+      <li>Wir verwenden HealthKit-Daten nicht für Werbung oder Datenauswertung</li>
       <li>Wir verwenden keine Werbenetzwerke oder Tracking-Pixel</li>
       <li>Wir verlangen keine Kontoregistrierung</li>
     </ul>
@@ -571,6 +583,11 @@
   <section>
     <h2><span class="icon">☁️</span> iCloud-Synchronisation (CloudKit)</h2>
     <p>Wenn iCloud auf deinem Gerät aktiviert ist, werden deine Habit-Daten über Apple CloudKit auf deinen Apple-Geräten synchronisiert. Diese Daten werden in deinem persönlichen iCloud-Konto gespeichert und unterliegen der <a href="https://www.apple.com/de/privacy/" target="_blank" style="color:var(--green)">Datenschutzrichtlinie von Apple</a>. Wir haben keinen Zugriff auf deine iCloud-Daten.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri &amp; Shortcuts</h2>
+    <p>Uplift unterstützt Siri und Apple Shortcuts, damit du Habits per Sprache abhaken kannst. Die gesamte Siri-Verarbeitung erfolgt durch Apple. Wir empfangen oder speichern keine Sprachdaten oder Siri-Anfragen.</p>
   </section>
 
   <section>
@@ -584,7 +601,7 @@
       <div class="right-item"><div class="right-icon">🚫</div><h4>Widerspruch</h4><p>Recht, der Datenverarbeitung zu widersprechen</p></div>
       <div class="right-item"><div class="right-icon">⚠️</div><h4>Beschwerde</h4><p>Recht auf Beschwerde bei einer Aufsichtsbehörde</p></div>
     </div>
-    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Da wir praktisch keine personenbezogenen Daten verarbeiten, gelten diese Rechte vor allem für die anonymisierten Firebase-Daten. Um deine Rechte auszuüben, kontaktiere uns unter der unten angegebenen E-Mail.</p>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">Da wir praktisch keine personenbezogenen Daten verarbeiten, gelten diese Rechte vor allem für das anonymisierte Firebase Analytics Event. Um deine Rechte auszuüben, kontaktiere uns unter der unten angegebenen E-Mail.</p>
   </section>
 
   <section>
@@ -608,19 +625,19 @@
 </div>
 
 
-<!-- TÜRKÇE -->
+<!-- ═══════════════════════════════════════ TÜRKÇE ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-tr">
   <div class="page-header">
     <div class="badge">🔒 Gizlilik Politikası</div>
     <h1>Gizliliğin.<br>Taahhüdümüz.</h1>
-    <p class="subtitle">Son güncelleme: Mayıs 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Son güncelleme: Haziran 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>Kişisel veri toplamıyor veya saklamıyoruz.</strong>
-      <p>Uplift Daily hesap gerektirmez, sizi kişisel olarak takip etmez ve verileri üçüncü taraflara asla satmaz. Alışkanlıklarınız size aittir.</p>
+      <strong>Kişisel veri toplamıyor veya satmıyoruz.</strong>
+      <p>Uplift Daily hesap gerektirmez, sizi kişisel olarak takip etmez ve verilerinizi üçüncü taraflara asla satmaz. Alışkanlık verileriniz cihazınızda ve kişisel iCloud'unuzda kalır. Aldığımız tek şey Firebase Analytics aracılığıyla tek bir anonim başlatma olayıdır.</p>
     </div>
   </div>
 
@@ -635,25 +652,35 @@
 
   <section>
     <h2><span class="icon">📱</span> Uygulama hangi verileri işler?</h2>
-    <p>Uplift Daily, alışkanlık verilerinizi (isimler, seriler, hatırlatıcılar) <strong>cihazınızda yerel olarak</strong> ve isteğe bağlı olarak kişisel iCloud hesabınızda saklar. Bu verilere erişimimiz yoktur.</p>
     <ul>
-      <li><strong>Alışkanlık verileri</strong> – yerel olarak saklanır, isteğe bağlı olarak kendi iCloud'unuzla (Apple CloudKit) senkronize edilir</li>
+      <li><strong>Alışkanlık verileri</strong> – yerel olarak saklanır, isteğe bağlı iCloud (Apple CloudKit) ile senkronize edilir</li>
+      <li><strong>Adınız</strong> – avatarınız için yerel ve iCloud'da saklanır; bize iletilmez</li>
       <li><strong>Hatırlatıcılar</strong> – yalnızca cihazınızda işlenen yerel push bildirimleri</li>
-      <li><strong>HealthKit verileri</strong> – adımlar, egzersizler ve aktivitelere salt okunur erişim (yalnızca açık izninizle, sunucularımızda hiçbir zaman saklanmaz)</li>
+      <li><strong>HealthKit verileri</strong> – aşağıdaki özel bölüme bakın</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Analiz ve Kilitlenme Raporları</h2>
+    <h2><span class="icon">❤️</span> Apple Health (HealthKit)</h2>
+    <p>Uplift, uyumlu alışkanlıkları otomatik olarak işaretlemek için Apple Health'ten sağlık verileri (adımlar, egzersizler, aktif dakikalar) okur. Bu, iOS sistem iletişim kutusu aracılığıyla açık izninizi gerektirir.</p>
+    <div class="health-notice">
+      <strong>Apple tarafından zorunlu tutulan açıklama:</strong>
+      <ul>
+        <li>HealthKit verileri <strong>yalnızca</strong> Uplift'te alışkanlıkları işaretlemek için kullanılır — reklam veya veri madenciliği için asla kullanılmaz</li>
+        <li>HealthKit verileri <strong>asla satılmaz</strong> veya üçüncü taraflarla paylaşılmaz</li>
+        <li>HealthKit verileri <strong>sunucularımızda asla saklanmaz</strong> — cihazınızda ve kişisel iCloud'unuzda kalır</li>
+        <li>Sağlık erişimini istediğiniz zaman iptal edebilirsiniz: <strong>Ayarlar → Gizlilik ve Güvenlik → Sağlık → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>Uygulamanın kullanılıp kullanılmadığını anlamak için Google'ın Firebase Analytics hizmetini kullanıyoruz. Yalnızca tek bir anonim olay kaydediyoruz: uygulama başlatıldığında tetiklenen <strong>app_started</strong>. Kişisel tanımlayıcı, alışkanlık içeriği veya sağlık verisi iletilmez.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
-        <p>Anonim, toplu kullanım olayları toplar. Kişisel tanımlayıcı iletilmez. Veriler Google LLC tarafından ABD'de işlenir.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
-        <p>Uygulama çöktüğünde kilitlenme raporları kaydeder – iOS sürümü, cihaz modeli ve uygulama sürümü dahil. Kişisel veri (ad, e-posta, konum) iletilmez.</p>
+        <p>Uygulama başlatıldığında anonim bir olay (<code>app_started</code>) gönderilir. Kişisel veri, alışkanlık veya sağlık bilgisi iletilmez. Veriler Google LLC tarafından ABD'de işlenir.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Gizlilik →</a>
       </div>
     </div>
@@ -665,14 +692,20 @@
       <li>Ad, e-posta adresi veya konum verisi toplamıyoruz</li>
       <li>Kullanıcı profili oluşturmuyoruz</li>
       <li>Üçüncü taraflara veri satmıyoruz</li>
+      <li>HealthKit verilerini reklam veya veri madenciliği için kullanmıyoruz</li>
       <li>Reklam ağları veya izleme pikseli kullanmıyoruz</li>
       <li>Hesap kaydı gerektirmiyoruz</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">☁️</span> iCloud Senkronizasyonu</h2>
-    <p>iCloud etkinleştirilmişse, alışkanlık verileriniz Apple CloudKit aracılığıyla Apple cihazlarınızla senkronize edilir. Bu veriler kişisel iCloud hesabınızda saklanır. Verilerinize erişimimiz yoktur.</p>
+    <h2><span class="icon">☁️</span> iCloud Senkronizasyonu (CloudKit)</h2>
+    <p>iCloud etkinleştirilmişse, alışkanlık verileriniz Apple CloudKit aracılığıyla Apple cihazlarınızla senkronize edilir. Bu veriler kişisel iCloud hesabınızda saklanır ve <a href="https://www.apple.com/privacy/" target="_blank" style="color:var(--green)">Apple'ın Gizlilik Politikası</a>'na tabidir. Verilerinize erişimimiz yoktur.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri ve Kısayollar</h2>
+    <p>Uplift, alışkanlıklarınızı sesle işaretleyebilmeniz için Siri ve Apple Kısayolları'nı destekler. Tüm Siri işlemleri Apple tarafından gerçekleştirilir. Sesli veri veya Siri sorgusu almıyor ya da saklamıyoruz.</p>
   </section>
 
   <section>
@@ -681,8 +714,20 @@
       <div class="right-item"><div class="right-icon">👁️</div><h4>Erişim</h4><p>İşlenen veriler hakkında bilgi alma hakkı</p></div>
       <div class="right-item"><div class="right-icon">✏️</div><h4>Düzeltme</h4><p>Yanlış verilerin düzeltilmesini talep etme hakkı</p></div>
       <div class="right-item"><div class="right-icon">🗑️</div><h4>Silme</h4><p>Verilerinizin silinmesini talep etme hakkı</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Taşınabilirlik</h4><p>Verilerinizi taşınabilir formatta alma hakkı</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>İtiraz</h4><p>Veri işlemeye itiraz etme hakkı</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Şikayet</h4><p>Denetim makamına şikayette bulunma hakkı</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Çocukların Gizliliği</h2>
+    <p>Uplift Daily 13 yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek veri toplamıyoruz. Bir çocuğun bize bilgi sağladığını düşünüyorsanız lütfen hemen bizimle iletişime geçin.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Bu Politikadaki Değişiklikler</h2>
+    <p>Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Değişiklikler, güncellenmiş tarihle bu sayfada yayınlanacaktır. Bu sayfayı periyodik olarak incelemenizi öneririz.</p>
   </section>
 
   <hr>
@@ -696,19 +741,19 @@
 </div>
 
 
-<!-- ESPAÑOL -->
+<!-- ═══════════════════════════════════════ ESPAÑOL ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-es">
   <div class="page-header">
     <div class="badge">🔒 Política de Privacidad</div>
     <h1>Tu privacidad.<br>Nuestro compromiso.</h1>
-    <p class="subtitle">Última actualización: Mayo 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Última actualización: Junio 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>No recopilamos ni almacenamos datos personales.</strong>
-      <p>Uplift Daily no requiere cuenta, no te rastrea personalmente y nunca vende datos a terceros. Tus hábitos son tuyos.</p>
+      <strong>No recopilamos ni vendemos datos personales.</strong>
+      <p>Uplift Daily no requiere cuenta, no te rastrea personalmente y nunca vende tus datos a terceros. Tus datos de hábitos permanecen en tu dispositivo y en tu iCloud personal. Lo único que recibimos es un único evento de inicio anónimo a través de Firebase Analytics.</p>
     </div>
   </div>
 
@@ -725,22 +770,33 @@
     <h2><span class="icon">📱</span> ¿Qué datos procesa la app?</h2>
     <ul>
       <li><strong>Datos de hábitos</strong> – almacenados localmente y sincronizados opcionalmente con tu iCloud (Apple CloudKit)</li>
+      <li><strong>Tu nombre</strong> – almacenado localmente y en iCloud para tu avatar; nunca se transmite a nosotros</li>
       <li><strong>Recordatorios</strong> – notificaciones push locales, procesadas solo en tu dispositivo</li>
-      <li><strong>Datos de HealthKit</strong> – acceso de solo lectura a pasos, ejercicios y actividad (solo con tu permiso explícito)</li>
+      <li><strong>Datos de HealthKit</strong> – ver sección dedicada abajo</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Análisis y Reportes de Fallos</h2>
+    <h2><span class="icon">❤️</span> Apple Salud (HealthKit)</h2>
+    <p>Uplift lee datos de salud (pasos, ejercicios, minutos activos) de Apple Salud para marcar automáticamente los hábitos compatibles. Esto requiere tu permiso explícito a través del diálogo del sistema iOS.</p>
+    <div class="health-notice">
+      <strong>Declaración obligatoria (política de Apple):</strong>
+      <ul>
+        <li>Los datos de HealthKit se usan <strong>exclusivamente</strong> para marcar hábitos en Uplift — nunca para publicidad ni minería de datos</li>
+        <li>Los datos de HealthKit <strong>nunca se venden</strong> ni se comparten con terceros</li>
+        <li>Los datos de HealthKit <strong>nunca se almacenan en nuestros servidores</strong> — permanecen en tu dispositivo y en tu iCloud personal</li>
+        <li>Puedes revocar el acceso a Salud en cualquier momento: <strong>Ajustes → Privacidad y seguridad → Salud → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>Para saber si la app se usa, utilizamos Firebase Analytics de Google. Registramos un único evento anónimo: <strong>app_started</strong>, cuando la app se inicia. No se transmiten identificadores personales, contenido de hábitos ni datos de salud.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
-        <p>Recopila eventos de uso anónimos y agregados. No se transmiten identificadores personales. Google LLC procesa los datos en EE. UU.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacidad de Firebase →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
-        <p>Registra informes de fallos cuando la app se cierra inesperadamente. No se incluyen datos personales.</p>
+        <p>Se envía un evento anónimo (<code>app_started</code>) al iniciar la app. Sin datos personales, sin hábitos, sin información de salud. Google LLC procesa los datos en EE. UU.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Privacidad de Firebase →</a>
       </div>
     </div>
@@ -752,9 +808,20 @@
       <li>No recopilamos nombres, correos electrónicos ni datos de ubicación</li>
       <li>No creamos perfiles de usuario</li>
       <li>No vendemos datos a terceros</li>
+      <li>No usamos datos de HealthKit para publicidad ni minería de datos</li>
       <li>No utilizamos redes publicitarias ni píxeles de seguimiento</li>
       <li>No requerimos registro de cuenta</li>
     </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> Sincronización con iCloud (CloudKit)</h2>
+    <p>Si iCloud está activado, tus datos de hábitos se sincronizan entre tus dispositivos Apple mediante Apple CloudKit. Estos datos se almacenan en tu cuenta personal de iCloud y están sujetos a la <a href="https://www.apple.com/privacy/" target="_blank" style="color:var(--green)">Política de Privacidad de Apple</a>. No tenemos acceso a tus datos de iCloud.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri y Atajos</h2>
+    <p>Uplift admite Siri y Atajos de Apple para que puedas marcar hábitos con tu voz. Todo el procesamiento de Siri lo realiza Apple. No recibimos ni almacenamos datos de voz ni consultas de Siri.</p>
   </section>
 
   <section>
@@ -763,8 +830,20 @@
       <div class="right-item"><div class="right-icon">👁️</div><h4>Acceso</h4><p>Derecho a saber qué datos se procesan</p></div>
       <div class="right-item"><div class="right-icon">✏️</div><h4>Rectificación</h4><p>Derecho a corregir datos incorrectos</p></div>
       <div class="right-item"><div class="right-icon">🗑️</div><h4>Supresión</h4><p>Derecho al olvido</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Portabilidad</h4><p>Derecho a recibir tus datos en formato portable</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>Oposición</h4><p>Derecho a oponerse al tratamiento</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Reclamación</h4><p>Derecho a reclamar ante una autoridad de control</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Privacidad de los menores</h2>
+    <p>Uplift Daily no está dirigida a menores de 13 años. No recopilamos datos de menores de forma consciente. Si crees que un menor nos ha proporcionado información, contáctanos de inmediato.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Cambios en esta política</h2>
+    <p>Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada. Te recomendamos revisar esta página periódicamente.</p>
   </section>
 
   <hr>
@@ -778,19 +857,19 @@
 </div>
 
 
-<!-- FRANÇAIS -->
+<!-- ═══════════════════════════════════════ FRANÇAIS ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-fr">
   <div class="page-header">
     <div class="badge">🔒 Politique de Confidentialité</div>
     <h1>Votre vie privée.<br>Notre engagement.</h1>
-    <p class="subtitle">Dernière mise à jour : Mai 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Dernière mise à jour : Juin 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>Nous ne collectons ni ne stockons aucune donnée personnelle.</strong>
-      <p>Uplift Daily ne nécessite pas de compte, ne vous suit pas personnellement et ne vend jamais de données à des tiers. Vos habitudes vous appartiennent.</p>
+      <strong>Nous ne collectons ni ne vendons aucune donnée personnelle.</strong>
+      <p>Uplift Daily ne nécessite pas de compte, ne vous suit pas personnellement et ne vend jamais vos données à des tiers. Vos données d'habitudes restent sur votre appareil et dans votre iCloud personnel. La seule donnée que nous recevons est un unique événement de démarrage anonyme via Firebase Analytics.</p>
     </div>
   </div>
 
@@ -807,22 +886,33 @@
     <h2><span class="icon">📱</span> Quelles données l'application traite-t-elle ?</h2>
     <ul>
       <li><strong>Données d'habitudes</strong> – stockées localement et synchronisées optionnellement via votre iCloud (Apple CloudKit)</li>
+      <li><strong>Votre prénom</strong> – stocké localement et dans iCloud pour votre avatar ; jamais transmis à nous</li>
       <li><strong>Rappels</strong> – notifications push locales, traitées uniquement sur votre appareil</li>
-      <li><strong>Données HealthKit</strong> – accès en lecture seule aux pas, entraînements et activités (uniquement avec votre permission explicite)</li>
+      <li><strong>Données HealthKit</strong> – voir la section dédiée ci-dessous</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Analyses et Rapports de Plantage</h2>
+    <h2><span class="icon">❤️</span> Apple Santé (HealthKit)</h2>
+    <p>Uplift lit des données de santé (pas, séances d'entraînement, minutes actives) depuis Apple Santé pour cocher automatiquement les habitudes compatibles. Cela nécessite votre permission explicite via la boîte de dialogue système iOS.</p>
+    <div class="health-notice">
+      <strong>Déclaration obligatoire (politique Apple) :</strong>
+      <ul>
+        <li>Les données HealthKit sont utilisées <strong>exclusivement</strong> pour cocher des habitudes dans Uplift — jamais à des fins publicitaires ou de profilage</li>
+        <li>Les données HealthKit ne sont <strong>jamais vendues</strong> ni partagées avec des tiers</li>
+        <li>Les données HealthKit ne sont <strong>jamais stockées sur nos serveurs</strong> — elles restent sur votre appareil et dans votre iCloud personnel</li>
+        <li>Vous pouvez révoquer l'accès à Santé à tout moment : <strong>Réglages → Confidentialité et sécurité → Santé → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>Pour savoir si l'application est utilisée, nous utilisons Firebase Analytics de Google. Nous enregistrons un unique événement anonyme : <strong>app_started</strong>, déclenché au lancement. Aucun identifiant personnel, contenu d'habitudes ou donnée de santé n'est transmis.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
-        <p>Collecte des événements d'utilisation anonymisés et agrégés. Aucun identifiant personnel n'est transmis. Les données sont traitées par Google LLC aux États-Unis.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Confidentialité Firebase →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
-        <p>Enregistre les rapports de plantage. Aucune donnée personnelle (nom, e-mail, localisation) n'est incluse.</p>
+        <p>Un événement anonyme (<code>app_started</code>) est envoyé au lancement. Aucune donnée personnelle, habitude ou information de santé n'est transmise. Les données sont traitées par Google LLC aux États-Unis.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Confidentialité Firebase →</a>
       </div>
     </div>
@@ -834,9 +924,20 @@
       <li>Nous ne collectons pas de noms, e-mails ou données de localisation</li>
       <li>Nous ne créons pas de profils d'utilisateurs</li>
       <li>Nous ne vendons pas de données à des tiers</li>
-      <li>Nous n'utilisons pas de réseaux publicitaires</li>
+      <li>Nous n'utilisons pas les données HealthKit à des fins publicitaires ou de profilage</li>
+      <li>Nous n'utilisons pas de réseaux publicitaires ni de pixels de suivi</li>
       <li>Nous ne requérons pas d'inscription</li>
     </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> Synchronisation iCloud (CloudKit)</h2>
+    <p>Si iCloud est activé, vos données d'habitudes sont synchronisées sur vos appareils Apple via Apple CloudKit. Ces données sont stockées dans votre compte iCloud personnel et sont soumises à la <a href="https://www.apple.com/fr/privacy/" target="_blank" style="color:var(--green)">Politique de confidentialité d'Apple</a>. Nous n'avons pas accès à vos données iCloud.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri et Raccourcis</h2>
+    <p>Uplift prend en charge Siri et les Raccourcis Apple pour vous permettre de cocher des habitudes à la voix. Tout le traitement Siri est effectué par Apple. Nous ne recevons ni ne stockons aucune donnée vocale ni requête Siri.</p>
   </section>
 
   <section>
@@ -845,8 +946,20 @@
       <div class="right-item"><div class="right-icon">👁️</div><h4>Accès</h4><p>Droit de savoir quelles données sont traitées</p></div>
       <div class="right-item"><div class="right-icon">✏️</div><h4>Rectification</h4><p>Droit de corriger des données inexactes</p></div>
       <div class="right-item"><div class="right-icon">🗑️</div><h4>Effacement</h4><p>Droit à l'oubli</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Portabilité</h4><p>Droit de recevoir vos données dans un format portable</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>Opposition</h4><p>Droit de s'opposer au traitement</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Réclamation</h4><p>Droit de déposer une plainte auprès d'une autorité de contrôle</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Protection des mineurs</h2>
+    <p>Uplift Daily ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données provenant d'enfants. Si vous pensez qu'un enfant nous a fourni des informations, veuillez nous contacter immédiatement.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Modifications de cette politique</h2>
+    <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Les modifications seront publiées sur cette page avec une date mise à jour. Nous vous encourageons à consulter cette page régulièrement.</p>
   </section>
 
   <hr>
@@ -860,19 +973,19 @@
 </div>
 
 
-<!-- ITALIANO -->
+<!-- ═══════════════════════════════════════ ITALIANO ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-it">
   <div class="page-header">
     <div class="badge">🔒 Informativa sulla Privacy</div>
     <h1>La tua privacy.<br>Il nostro impegno.</h1>
-    <p class="subtitle">Ultimo aggiornamento: Maggio 2026 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">Ultimo aggiornamento: Giugno 2026 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>Non raccogliamo né archiviamo dati personali.</strong>
-      <p>Uplift Daily non richiede un account, non ti traccia personalmente e non vende mai dati a terzi. Le tue abitudini sono tue.</p>
+      <strong>Non raccogliamo né vendiamo dati personali.</strong>
+      <p>Uplift Daily non richiede un account, non ti traccia personalmente e non vende mai i tuoi dati a terzi. I tuoi dati sulle abitudini rimangono sul tuo dispositivo e nel tuo iCloud personale. L'unica cosa che riceviamo è un unico evento di avvio anonimo tramite Firebase Analytics.</p>
     </div>
   </div>
 
@@ -889,22 +1002,33 @@
     <h2><span class="icon">📱</span> Quali dati elabora l'app?</h2>
     <ul>
       <li><strong>Dati sulle abitudini</strong> – archiviati localmente e sincronizzati facoltativamente tramite iCloud (Apple CloudKit)</li>
+      <li><strong>Il tuo nome</strong> – archiviato localmente e in iCloud per il tuo avatar; non ci viene mai trasmesso</li>
       <li><strong>Promemoria</strong> – notifiche push locali, elaborate solo sul tuo dispositivo</li>
-      <li><strong>Dati HealthKit</strong> – accesso in sola lettura a passi, allenamenti e attività (solo con il tuo esplicito consenso)</li>
+      <li><strong>Dati HealthKit</strong> – vedi sezione dedicata qui sotto</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – Analisi e Segnalazioni di Crash</h2>
+    <h2><span class="icon">❤️</span> Apple Salute (HealthKit)</h2>
+    <p>Uplift legge dati sulla salute (passi, allenamenti, minuti attivi) da Apple Salute per spuntare automaticamente le abitudini compatibili. Ciò richiede il tuo consenso esplicito tramite la finestra di dialogo del sistema iOS.</p>
+    <div class="health-notice">
+      <strong>Informativa obbligatoria (policy Apple):</strong>
+      <ul>
+        <li>I dati HealthKit vengono utilizzati <strong>esclusivamente</strong> per spuntare abitudini in Uplift — mai per pubblicità o profilazione</li>
+        <li>I dati HealthKit non vengono <strong>mai venduti</strong> né condivisi con terze parti</li>
+        <li>I dati HealthKit non vengono <strong>mai archiviati sui nostri server</strong> — rimangono sul tuo dispositivo e nel tuo iCloud personale</li>
+        <li>Puoi revocare l'accesso a Salute in qualsiasi momento: <strong>Impostazioni → Privacy e sicurezza → Salute → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>Per sapere se l'app viene utilizzata, usiamo Firebase Analytics di Google. Registriamo un unico evento anonimo: <strong>app_started</strong>, attivato all'avvio. Non vengono trasmessi identificatori personali, contenuti di abitudini o dati sanitari.</p>
     <div class="service-cards">
       <div class="service-card">
         <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
-        <p>Raccoglie eventi di utilizzo anonimi e aggregati. Nessun identificatore personale viene trasmesso. I dati sono elaborati da Google LLC negli USA.</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Firebase →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header"><div class="service-logo">🛠️</div><div><h3>Firebase Crashlytics</h3></div></div>
-        <p>Registra i rapporti di crash. Nessun dato personale è incluso.</p>
+        <p>All'avvio viene inviato un evento anonimo (<code>app_started</code>). Nessun dato personale, abitudine o informazione sanitaria viene trasmessa. I dati sono elaborati da Google LLC negli USA.</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Firebase →</a>
       </div>
     </div>
@@ -916,9 +1040,20 @@
       <li>Non raccogliamo nomi, email o dati di localizzazione</li>
       <li>Non creiamo profili utente</li>
       <li>Non vendiamo dati a terzi</li>
-      <li>Non utilizziamo reti pubblicitarie</li>
-      <li>Non richidiamo la registrazione di un account</li>
+      <li>Non utilizziamo dati HealthKit per pubblicità o profilazione</li>
+      <li>Non utilizziamo reti pubblicitarie né pixel di tracciamento</li>
+      <li>Non richiediamo la registrazione di un account</li>
     </ul>
+  </section>
+
+  <section>
+    <h2><span class="icon">☁️</span> Sincronizzazione iCloud (CloudKit)</h2>
+    <p>Se iCloud è attivo, i tuoi dati sulle abitudini vengono sincronizzati tra i tuoi dispositivi Apple tramite Apple CloudKit. Questi dati sono archiviati nel tuo account iCloud personale e sono soggetti alla <a href="https://www.apple.com/it/privacy/" target="_blank" style="color:var(--green)">Informativa sulla privacy di Apple</a>. Non abbiamo accesso ai tuoi dati iCloud.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri e Comandi Rapidi</h2>
+    <p>Uplift supporta Siri e i Comandi Rapidi di Apple per spuntare abitudini con la voce. Tutta l'elaborazione Siri viene effettuata da Apple. Non riceviamo né archiviamo dati vocali o query Siri.</p>
   </section>
 
   <section>
@@ -927,8 +1062,20 @@
       <div class="right-item"><div class="right-icon">👁️</div><h4>Accesso</h4><p>Diritto di sapere quali dati vengono elaborati</p></div>
       <div class="right-item"><div class="right-icon">✏️</div><h4>Rettifica</h4><p>Diritto di correggere dati inesatti</p></div>
       <div class="right-item"><div class="right-icon">🗑️</div><h4>Cancellazione</h4><p>Diritto all'oblio</p></div>
+      <div class="right-item"><div class="right-icon">📦</div><h4>Portabilità</h4><p>Diritto di ricevere i dati in formato portabile</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>Opposizione</h4><p>Diritto di opporsi al trattamento</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>Reclamo</h4><p>Diritto di presentare reclamo a un'autorità di controllo</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">👶</span> Privacy dei minori</h2>
+    <p>Uplift Daily non è rivolta a bambini sotto i 13 anni. Non raccogliamo consapevolmente dati da minori. Se ritieni che un minore ci abbia fornito informazioni, contattaci immediatamente.</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔄</span> Modifiche a questa informativa</h2>
+    <p>Potremmo aggiornare questa informativa sulla privacy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con una data aggiornata. Ti invitiamo a consultare questa pagina periodicamente.</p>
   </section>
 
   <hr>
@@ -941,25 +1088,25 @@
   </div>
 </div>
 
-<!-- 中文 -->
+
+<!-- ═══════════════════════════════════════ 中文 ═══════════════════════════════════════ -->
 <div class="lang-content" id="lang-zh">
   <div class="page-header">
     <span class="badge">🔒 隐私政策</span>
     <h1>您的隐私。<br>我们的承诺。</h1>
-    <p class="subtitle">最后更新：2026年5月 &nbsp;·&nbsp; Uplift Daily</p>
+    <p class="subtitle">最后更新：2026年6月 &nbsp;·&nbsp; Uplift Daily</p>
   </div>
 
   <div class="highlight">
     <div class="highlight-icon">✅</div>
     <div class="highlight-text">
-      <strong>我们不收集或存储任何个人数据。</strong>
-      <p>Uplift Daily 无需账户，不追踪您的个人信息，也不向第三方出售任何数据。您的习惯只属于您自己。</p>
+      <strong>我们不收集或出售任何个人数据。</strong>
+      <p>Uplift Daily 无需账户，不追踪您的个人信息，也不向第三方出售任何数据。您的习惯数据仅存储在您的设备和个人 iCloud 中。我们收到的唯一数据是通过 Firebase Analytics 发送的一个匿名启动事件。</p>
     </div>
   </div>
 
   <section>
     <h2><span class="icon">👤</span> 数据控制者</h2>
-    <p>本应用的责任方：</p>
     <p><strong>Evren Agsakal</strong><br>
     Brückelstr. 106<br>
     47137 Duisburg<br>
@@ -969,32 +1116,35 @@
 
   <section>
     <h2><span class="icon">📱</span> 应用处理哪些数据？</h2>
-    <p>Uplift Daily 将您的习惯数据（名称、连续天数、提醒）<strong>本地存储在您的设备上</strong>，并可选地存储在您的个人 iCloud 账户中。我们无法访问这些数据。</p>
     <ul>
       <li><strong>习惯数据</strong> – 本地存储，可通过您自己的 iCloud（Apple CloudKit）同步</li>
+      <li><strong>您的姓名</strong> – 为头像本地和 iCloud 中存储；从不传输给我们</li>
       <li><strong>提醒</strong> – 本地推送通知，仅在您的设备上处理</li>
-      <li><strong>HealthKit 数据</strong> – 只读访问步数、锻炼和活动数据（仅在您明确授权的情况下，从不存储在我们的服务器上）</li>
+      <li><strong>HealthKit 数据</strong> – 请参阅下方专属部分</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">🔥</span> Firebase – 分析与崩溃报告</h2>
-    <p>为了提升应用稳定性并了解一般使用模式，我们使用 Google 提供的两项 Firebase 服务：</p>
+    <h2><span class="icon">❤️</span> Apple 健康（HealthKit）</h2>
+    <p>Uplift 从 Apple 健康读取健康数据（步数、锻炼、活跃分钟数），以自动标记兼容的习惯。这需要您通过 iOS 系统对话框明确授权。</p>
+    <div class="health-notice">
+      <strong>Apple 强制要求声明：</strong>
+      <ul>
+        <li>HealthKit 数据<strong>仅用于</strong>在 Uplift 中标记习惯 — 绝不用于广告或数据挖掘</li>
+        <li>HealthKit 数据<strong>绝不出售</strong>给第三方或与第三方共享</li>
+        <li>HealthKit 数据<strong>绝不存储在我们的服务器上</strong> — 保留在您的设备和个人 iCloud 中</li>
+        <li>您可随时撤销健康访问权限：<strong>设置 → 隐私与安全 → 健康 → Uplift</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="icon">🔥</span> Firebase Analytics</h2>
+    <p>为了了解应用是否被使用，我们使用 Google 的 Firebase Analytics。我们只记录一个匿名事件：应用启动时触发的 <strong>app_started</strong>。不传输任何个人标识符、习惯内容或健康数据。</p>
     <div class="service-cards">
       <div class="service-card">
-        <div class="service-header">
-          <div class="service-logo">📊</div>
-          <div><h3>Firebase Analytics</h3></div>
-        </div>
-        <p>收集匿名化、聚合的使用事件。不传输任何个人标识符。数据由美国 Google LLC 处理。</p>
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策 →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-logo">🛠️</div>
-          <div><h3>Firebase Crashlytics</h3></div>
-        </div>
-        <p>当应用崩溃时记录崩溃报告。不包含任何个人数据（姓名、电子邮件、位置）。</p>
+        <div class="service-header"><div class="service-logo">📊</div><div><h3>Firebase Analytics</h3></div></div>
+        <p>启动时发送一个匿名事件（<code>app_started</code>）。不传输任何个人数据、习惯或健康信息。数据由美国 Google LLC 处理。</p>
         <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策 →</a>
       </div>
     </div>
@@ -1004,16 +1154,22 @@
     <h2><span class="icon">🚫</span> 我们不做的事</h2>
     <ul>
       <li>不收集姓名、电子邮件地址或位置数据</li>
-      <li>不向广告商或数据经纪商出售数据</li>
       <li>不创建用户档案</li>
-      <li>不在设备间追踪您</li>
+      <li>不向第三方出售数据</li>
+      <li>不将 HealthKit 数据用于广告或数据挖掘</li>
+      <li>不使用广告网络或追踪像素</li>
       <li>不要求账户注册</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="icon">☁️</span> iCloud 同步</h2>
-    <p>如果您启用 iCloud 同步，您的习惯数据将存储在您的个人 Apple iCloud 账户（CloudKit）中。这些数据由 Apple 负责，我们无法访问。</p>
+    <h2><span class="icon">☁️</span> iCloud 同步（CloudKit）</h2>
+    <p>如果启用 iCloud，您的习惯数据将通过 Apple CloudKit 在您的 Apple 设备间同步。这些数据存储在您的个人 iCloud 账户中，受 <a href="https://www.apple.com/privacy/" target="_blank" style="color:var(--green)">Apple 隐私政策</a>约束。我们无法访问您的 iCloud 数据。</p>
+  </section>
+
+  <section>
+    <h2><span class="icon">🎤</span> Siri 与快捷指令</h2>
+    <p>Uplift 支持 Siri 和 Apple 快捷指令，让您可以用语音标记习惯。所有 Siri 处理均由 Apple 完成。我们不接收或存储任何语音数据或 Siri 查询。</p>
   </section>
 
   <section>
@@ -1024,13 +1180,13 @@
       <div class="right-item"><div class="right-icon">🗑️</div><h4>删除权</h4><p>被遗忘的权利</p></div>
       <div class="right-item"><div class="right-icon">📦</div><h4>可携权</h4><p>以机器可读格式接收数据的权利</p></div>
       <div class="right-item"><div class="right-icon">🚫</div><h4>反对权</h4><p>反对数据处理的权利</p></div>
-      <div class="right-item"><div class="right-icon">📢</div><h4>投诉权</h4><p>向监督机构提出投诉的权利</p></div>
+      <div class="right-item"><div class="right-icon">⚠️</div><h4>投诉权</h4><p>向监督机构提出投诉的权利</p></div>
     </div>
   </section>
 
   <section>
     <h2><span class="icon">👶</span> 儿童隐私</h2>
-    <p>Uplift Daily 不面向13岁以下儿童。我们不会有意收集儿童数据。如果您认为某个儿童向我们提供了信息，请立即联系我们。</p>
+    <p>Uplift Daily 不面向 13 岁以下儿童。我们不会有意收集儿童数据。如果您认为某个儿童向我们提供了信息，请立即联系我们。</p>
   </section>
 
   <section>
@@ -1043,7 +1199,7 @@
     <div class="contact-icon">✉️</div>
     <div>
       <h3>有隐私问题？</h3>
-      <p>欢迎联系我们：<a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a>——我们将在72小时内回复。</p>
+      <p>欢迎联系我们：<a href="mailto:evro89@hotmail.de">evro89@hotmail.de</a> — 我们将在 72 小时内回复。</p>
     </div>
   </div>
 </div>
